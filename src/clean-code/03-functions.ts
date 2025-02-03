@@ -32,4 +32,24 @@
 		console.log('Crear actor', birthDate);
 		return true;
 	}
+
+	// Continuacion
+
+	interface Amount {
+		isDead?: boolean;
+		isSeparated?: boolean;
+		isRetired?: boolean;
+	}
+
+	const getPayAmount = ({
+		isDead = false,
+		isSeparated = true,
+		isRetired = false,
+	}: Amount): number => {
+		if (isDead) return 1500;
+
+		if (isSeparated) return 2500;
+
+		return isRetired ? 3000 : 4000;
+	};
 })();
